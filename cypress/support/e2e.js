@@ -18,3 +18,7 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+Cypress.Cookies.defaults({
+    preserve: ['_aceworks_clean_session', 'remember_token'],
+  })
+  Cypress.on('uncaught:exception', () => false)
