@@ -53,7 +53,7 @@ class Login {
             locator.forgotPasswordTab()
             locator.forgotPasswordEmail().type(invalidEmail)
             locator.clickNextButton()
-            locator.alertForgotPassword()
+            locator.invalidFeedback()
             locator.forgotPasswordEmail().clear().type(email)
             locator.clickNextButton()
             locator.resetTabMessage()

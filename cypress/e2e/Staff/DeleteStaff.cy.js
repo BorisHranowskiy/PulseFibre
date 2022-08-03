@@ -13,8 +13,8 @@ describe('Staff', () => {
         login.loginAsAdmin()
       })
 
-    it('Invite staff', () => {
-        staff.validationStaffAdding()
+    it('Delete staff', () => {
+        staff.deleteStaff()
       })
 
 })
