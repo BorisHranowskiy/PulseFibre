@@ -1,7 +1,8 @@
+
 class Locators {
 
     loginPage() {
-        return cy.visit('http://45.136.108.241:8000/auth/login/?next=/')
+        return cy.visit('https://dev.pulsefibre.co.uk/')
     }
 
     email() {
@@ -32,7 +33,7 @@ class Locators {
         return cy.get('[class=kt-login__forgot]').should('be.visible')
     }
 
-    alertForgotPassword() {
+    invalidFeedback() {
         return cy.get('[class=invalid-feedback]').should('be.visible')
     }
 
@@ -94,6 +95,27 @@ class Locators {
 
     dateField() {
         return cy.get('[data-field="email"]')
+    }
+
+    existingEmail() {
+        return cy.get('.display-flex').should('contain','Sorry, but a user with this email already exists.')
+    }
+
+    deleteIcon() {
+        return cy.get('.delete-action')
+    }
+
+    editIcon() {
+        return cy.get('.edit-action')
+    }
+
+    deleteFormAppears() {
+        cy.get('#own-delete-form').should('be.visible')
+        
+    }
+
+    submitDelete() {
+        cy.get('.btn.button-text.custom-confirm-button').click()
     }
  
 
