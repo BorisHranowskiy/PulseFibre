@@ -22,3 +22,4 @@ newrelic_agent.log
 .vscode
 # variables
 .env
+.mp4
