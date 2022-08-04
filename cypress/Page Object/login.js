@@ -9,7 +9,8 @@ class Login {
         password: "mademen123",
         email: "khranovskiy.borys@coaxsoft.com",
         invalidPassword: "Q123123",
-        invalidEmail: "khranovskiy.borys111@coaxsoft.com"
+        invalidEmail: "khranovskiy.borys111@coaxsoft.com",
+        changedPassword: "Q123123q"
     }
 
     loginAsAdmin() 
@@ -23,6 +24,19 @@ class Login {
         locator.pulseLogo()
     }
     fillloginInfo(this.loginInfo)
+
+    }
+
+    loginWithChangedPassowrd() {
+        const fillloginInfo =({changedPassword,email}) =>{
+            locator.loginPage()
+            locator.loginTab()
+            locator.email().type(email)
+            locator.password().type(changedPassword)
+            locator.clickNextButton()
+            locator.pulseLogo()
+        }
+        fillloginInfo(this.loginInfo)
 
     }
 

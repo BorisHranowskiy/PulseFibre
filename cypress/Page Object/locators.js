@@ -230,6 +230,34 @@ class Locators {
     dataFieldTownCity() {
         return cy.get('[data-field="city"]')
     }
+
+    clickOnUserHeader() {
+        return cy.get('.kt-header__topbar-user').click()
+    }
+
+    openMyProfile() {
+        return cy.get('[href="/profile/update/"]').click()
+    }
+
+    userNameHeader() {
+        return cy.get('.kt-header__topbar-username')
+    }
+
+    oldPassword() {
+        return cy.get('[name="old_password"]')
+    }
+
+    newPassowrd() {
+        return cy.get('[name="new_password1"]')
+    }
+
+    confrimNewPassword() {
+        return cy.get('[name="new_password2"]')
+    }
+
+    clickPasswordChangeTab() {
+        return cy.get('[href="/profile/password_change/"]').click()
+    }
  
 
 }
