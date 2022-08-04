@@ -6,7 +6,7 @@ const locator = new Locators()
 class Login {
 
     loginInfo = {
-        password: "Q123123q",
+        password: "mademen123",
         email: "khranovskiy.borys@coaxsoft.com",
         invalidPassword: "Q123123",
         invalidEmail: "khranovskiy.borys111@coaxsoft.com"

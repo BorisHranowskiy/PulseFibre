@@ -10,7 +10,12 @@ class Staff {
         randomEmail: locator.randomEmail(),
         mobileNumber: "+12125552368",
         existingEmail: "khranovskiy.borys@coaxsoft.com",
-        editedName: " "
+        editedName: " ",
+        searchFirstName: "Borys1",
+        searchLastName: "Khranovskiy2",
+        searchID: "7",
+        searchEmail: "khranovskiy.borys@coaxsoft.com",
+        searchMobileNumber: "+380679946285",
     }
 
     addStaff() {
@@ -72,6 +77,27 @@ class Staff {
         locator.clickSubmitButton()
         locator.successAlertAppears()
         locator.dateField().should('contain',randomEmail)
+        }
+        fillStaffInfo(this.staffInfo)
+    }
+    
+    searchStaff() {
+        const fillStaffInfo =({searchEmail,searchID,searchMobileNumber,searchFirstName,searchLastName}) =>{
+            locator.staffPageClick()
+            locator.searchField().type(searchEmail).type('{enter}')
+            locator.dataFieldEmail().should('contain',searchEmail)
+            locator.searchField().clear().type(searchMobileNumber).type('{enter}')
+            locator.dataFieldMobile().should('contain',searchMobileNumber)
+            locator.searchField().clear().type(searchFirstName).type('{enter}')
+            locator.dataFieldFirstName().should('contain',searchFirstName)
+            locator.searchField().clear().type(searchID).type('{enter}')
+            locator.dataFieldID().should('contain',searchID)
+            locator.searchField().clear().type(searchLastName).type('{enter}')
+            locator.dataFieldLastName().should('contain',searchLastName)
+            locator.searchField().clear().type(locator.randomSymbols()).type('{enter}')
+            locator.noRecordFound().should('be.visible')
+
+
         }
         fillStaffInfo(this.staffInfo)
     }
