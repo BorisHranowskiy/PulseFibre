@@ -1,6 +1,5 @@
 import Locators from "./locators"
 
-
 const locator = new Locators()
 
 class Login {

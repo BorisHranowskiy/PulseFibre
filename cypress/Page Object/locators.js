@@ -258,6 +258,19 @@ class Locators {
     clickPasswordChangeTab() {
         return cy.get('[href="/profile/password_change/"]').click()
     }
+
+    openCustomerPage() {
+        return cy.get('[href="/customer/"]').click()
+    }
+
+    clickAddCustomerBtn() {
+        return cy.get('[href="/customer/create/"]').click()
+    }
+
+    companyField(){
+        return cy.get('[name="company"]')
+    }
+    
  
 
 }

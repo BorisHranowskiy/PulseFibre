@@ -1,18 +1,18 @@
 /// <reference types="cypress" />
 
+import Customer from "../../Page Object/Customer"
 import Login from "../../Page Object/login"
-import Profile from "../../Page Object/profile"
 
 const login = new Login()
-const profile = new Profile()
+const customer = new Customer()
 
-describe('Profile', () => {
+describe('Customer', () => {
       beforeEach(() => {
         login.loginAsAdmin()
       })
 
-    it('Edit profile', () => {
-        profile.editProfile()
+    it('Search', () => {
+       customer.searchCustomer()
       })
 
 })

@@ -3,8 +3,6 @@
 import Login from "../../Page Object/login"
 import Profile from "../../Page Object/profile"
 
-
-
 const login = new Login()
 const profile = new Profile()
 
