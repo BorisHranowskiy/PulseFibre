@@ -1,7 +1,7 @@
 import Locators from "./locators"
 
-
 const locators = new Locators()
+
 class Product {
 
     productInfo = {

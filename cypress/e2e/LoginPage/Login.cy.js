@@ -2,8 +2,6 @@
 
 import Login from "../../Page Object/login"
 
-
-
 const login = new Login()
 
 describe('Login', () => {
