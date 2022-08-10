@@ -270,6 +270,10 @@ class Locators {
     companyField(){
         return cy.get('[name="company"]')
     }
+
+    emailTakenCustomer() {
+        return cy.get('[class=invalid-feedback]').should('contain','User with this Email already exists.')
+    }
     
  
 

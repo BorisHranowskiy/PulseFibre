@@ -57,7 +57,7 @@ searchCustomer() {
 }
 
 deleteCustomer() {
-    const fillCustomerInfo =({firstName,lastName,randomEmail,mobileNumber}) =>{
+    const fillCustomerInfo =({firstName,lastName,randomEmail,mobileNumber, companyName}) =>{
     locator.openCustomerPage()
     locator.clickAddCustomerBtn()
     locator.addUserTab()
@@ -95,10 +95,10 @@ deleteCustomer() {
         locator.openCustomerPage()
         locator.clickAddCustomerBtn()
         locator.clickCreateButton()
-        locator.invalidFeedback().should('have.length','4')
+        locator.invalidFeedback().should('have.length','5')
         locator.staffEmail().type(existingEmail)
         locator.clickCreateButton()
-        locator.existingEmail()
+        locator.emailTakenCustomer()
     }
     fillCustomerInfo(this.customerInfo)
     }
