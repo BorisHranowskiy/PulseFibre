@@ -9,16 +9,21 @@ class Login {
         email: "khranovskiy.borys@coaxsoft.com",
         invalidPassword: "Q123123",
         invalidEmail: "khranovskiy.borys111@coaxsoft.com",
-        changedPassword: "Q123123q"
+        changedPassword: "Q123123q",
+        token: "jHodll**YEP5dj"
     }
 
     loginAsAdmin() 
     {
-        const fillloginInfo =({password,email}) =>{
+        const fillloginInfo =({password,email,token}) =>{
         locator.loginPage()
         locator.loginTab()
         locator.email().type(email)
         locator.password().type(password)
+        locator.clickNextButton()
+        locator.clickNextButton()
+        locator.dontHaveAccess()
+        locator.recoveryToken().type(token)
         locator.clickNextButton()
         locator.pulseLogo()
     }
