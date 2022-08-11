@@ -275,6 +275,53 @@ class Locators {
         return cy.get('[class=invalid-feedback]').should('contain','User with this Email already exists.')
     }
     
+    dontHaveAccess() {
+        return cy.get('[name="wizard_goto_step"]').contains('Don\'t have access to your authentication device?').click()
+    }
+
+    recoveryToken() {
+        return cy.get('[name="recovery-token"]')
+    }
+
+    openHardwarePage() {
+        return cy.get('[href="/hardware/"]').click()
+    }
+
+    addHardwareBtn() {
+        return cy.get('[href="/hardware/create/"]').click()
+    }
+
+    serialNumber() {
+        return cy.get('[name="serial_number"]')
+    }
+
+    make() {
+        return cy.get('[name="make"]')
+    }
+
+    model() {
+        return cy.get('[name="model"]')
+    }
+
+    dataFieldSerialNumber() {
+        return cy.get('[data-field="serial_number"]')
+    }
+
+    dataFieldMake() {
+        return cy.get('[data-field="make"]')
+    }
+
+    dataFieldModel() {
+        return cy.get('[data-field="model"]')
+    }
+
+    importHardwareBtn() {
+        return cy.get('[href="/hardware/import/"]').click()
+    }
+
+    importFile() {
+        return cy.get('[name="import_file"]')
+    }
  
 
 }
