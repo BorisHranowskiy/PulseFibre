@@ -1,18 +1,18 @@
 /// <reference types="cypress" />
 
 import Login from "../../Page Object/login"
-import Profile from "../../Page Object/profile"
+import Product from "../../Page Object/Product"
 
 const login = new Login()
-const profile = new Profile()
+const product = new Product()
 
-describe('Profile', () => {
+describe('Product', () => {
       beforeEach(() => {
         login.loginAsAdmin()
       })
 
-    it('Password validation', () => {
-        profile.passwordValidation()
+    it('Add product', () => {
+        product.editProduct()
       })
 
 })

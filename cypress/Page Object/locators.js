@@ -322,6 +322,12 @@ class Locators {
     importFile() {
         return cy.get('[name="import_file"]')
     }
+
+    productName() {
+        return cy.get('[placeholder="Product name"]')
+    }
+
+
  
 
 }

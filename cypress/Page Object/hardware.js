@@ -30,7 +30,7 @@ class Hardware {
 
 
     hardwareValidation() {
-        const fillHardwareinfo = ({serialNumber}) => {
+        const fillHardwareinfo = ({searchSerialNumber}) => {
         locator.openHardwarePage()
         locator.addHardwareBtn()
         locator.clickCreateButton()
