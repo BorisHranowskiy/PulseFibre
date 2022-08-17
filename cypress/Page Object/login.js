@@ -32,11 +32,14 @@ class Login {
     }
 
     loginWithChangedPassowrd() {
-        const fillloginInfo =({changedPassword,email}) =>{
+        const fillloginInfo =({changedPassword,email,token}) =>{
             locator.loginPage()
             locator.loginTab()
             locator.email().type(email)
             locator.password().type(changedPassword)
+            locator.clickNextButton()
+            locator.dontHaveAccess()
+            locator.recoveryToken().type(token)
             locator.clickNextButton()
             locator.pulseLogo()
         }
