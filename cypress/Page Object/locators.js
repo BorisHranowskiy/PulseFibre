@@ -327,8 +327,58 @@ class Locators {
         return cy.get('[placeholder="Product name"]')
     }
 
+    customerLink() {
+        return cy.visit('https://dev.pulsefibre.co.uk/auth/broadband-deals/')
+    }
 
- 
+    customerPostcode() {
+        return cy.get('[name="postcode-postcode"]')
+    }
+
+    customDangeAlert() {
+        return cy.get('.custom-danger-alert').should('be.visible')
+    }
+
+    validAddressesForPostcode() {
+        return cy.get('[name="address-address"]').should('be.visible')
+    }
+
+    selectAddress() {
+        return cy.get('select').select(0)
+    }
+
+    productsDisplayed() {
+        return cy.get('[class="kt-portlet"]')
+    }
+
+    productPulse1000() {
+        return cy.get('[data-product-id="22"]').click()
+    }
+
+    registrationEmail() {
+        return cy.get('[name="registration-email"]')
+    }
+
+    registrationPassword() {
+        return cy.get('[name="registration-password1"]')
+    }
+
+    registrationConfrimPassword() {
+        return cy.get('[name="registration-password2"]')
+    }
+
+    registrationFirstName() {
+        return cy.get('[name="registration-first_name"]')
+    }
+
+    registrationLastName() {
+        return cy.get('[name="registration-last_name"]')
+    }
+
+    registrationMobileNumber() {
+        return cy.get('[name="registration-mobile_number"]')
+    }
+
 
 }
 
