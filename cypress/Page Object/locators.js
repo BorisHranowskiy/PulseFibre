@@ -379,6 +379,26 @@ class Locators {
         return cy.get('[name="registration-mobile_number"]')
     }
 
+    openOrderPage() {
+        return cy.get('[href="/orders/"]').click()
+    }
+
+    clickAddNewOrderBtn() {
+        return cy.get('[href="/orders/create/"]').click()
+    }
+
+    prodcutDropDown() {
+        return cy.get('[data-select2-id="3"]').click()
+    }
+
+    selectOption() {
+        return cy.get('[role="treeitem"]')
+    }
+
+    clickCustomerDropDown() {
+        return cy.get('[aria-labelledby="select2-id_customer-container"]').click()
+    }
+
 
 }
 
