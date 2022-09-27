@@ -24,13 +24,13 @@ class Addresses {
     }
 
     addConnectedAddress() {
-        const fillConnectedAddressesInfo =({address2,address1,townCity,siteCode,postCode,pulseAK}) =>{
+        const fillConnectedAddressesInfo =({address2,address1,townCity,postCode,pulseAK}) =>{
         locators.openAddressPage()
         locators.clickAddConectedAddresses()
         locators.firstAddress().type(address1)
         locators.secondAddress().type(address2)
         locators.townCity().type(townCity)
-        locators.siteCode().type(siteCode)
+        locators.siteCodeDropDown()
         locators.postCode().type(postCode)
         locators.pulseAK().type(pulseAK)
         locators.clickCreateButton()
@@ -54,13 +54,13 @@ class Addresses {
 }
 
     deleteConnectedAddress() {
-        const fillConnectedAddressesInfo =({address2,address1,townCity,siteCode,postCode,pulseAK}) =>{
+        const fillConnectedAddressesInfo =({address2,address1,townCity,postCode,pulseAK}) =>{
             locators.openAddressPage()
             locators.clickAddConectedAddresses()
             locators.firstAddress().type(address1)
             locators.secondAddress().type(address2)
             locators.townCity().type(townCity)
-            locators.siteCode().type(siteCode)
+            locators.siteCodeDropDown()
             locators.postCode().type(postCode)
             locators.pulseAK().type(pulseAK)
             locators.clickCreateButton()
@@ -76,7 +76,7 @@ class Addresses {
     }
 
     addressValidation() {
-        const fillConnectedAddressesInfo =({invalidSiteCode,invalidPulseAK,address1,address2,townCity,postCode}) =>{
+        const fillConnectedAddressesInfo =({invalidPulseAK,address1,address2,townCity,postCode}) =>{
             locators.openAddressPage()
             locators.clickAddConectedAddresses()
             locators.clickCreateButton()
@@ -84,11 +84,10 @@ class Addresses {
             locators.firstAddress().type(address1)
             locators.secondAddress().type(address2)
             locators.townCity().type(townCity)
-            locators.siteCode().type(invalidSiteCode)
             locators.postCode().type(postCode)
             locators.pulseAK().type(invalidPulseAK)
             locators.clickCreateButton()
-            locators.invalidFeedback().should('have.length',2)
+            locators.invalidFeedback().should('have.length',3)
 
     }
     fillConnectedAddressesInfo(this.ConnectedAddresssesInfo)
