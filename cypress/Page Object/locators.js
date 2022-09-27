@@ -146,8 +146,9 @@ class Locators {
         return cy.get('[name="postcode"]')
     }
 
-    siteCode() {
-        return cy.get('[name="site_code"]')
+    siteCodeDropDown() {
+        cy.get('[aria-labelledby="select2-id_site-container"]').click()
+        cy.get('[class="select2-results__option"]').first().click()
     }
 
     pulseAK() {
@@ -392,14 +393,56 @@ class Locators {
     }
 
     selectOption() {
-        return cy.get('[role="treeitem"]')
+        return cy.get('[data-select2-id="58"]').click()
     }
 
     clickCustomerDropDown() {
         return cy.get('[aria-labelledby="select2-id_customer-container"]').click()
     }
 
+    resultOption() {
+        return cy.get('.select2-results__option')
+    }
+    
+    clickHardwareDropDown() {
+        return cy.get('[aria-labelledby="select2-id_hardware-container"]').click()
+    }
 
+    todayDate() {
+        return cy.get('.today.day').click()
+    }
+
+    clickStartAtCalendar() {
+        return cy.get('[name="start_at"]').click()
+    }
+
+    openSitePage() {
+        return cy.get('[href="/sites/"]').click()
+    }
+
+    addSiteBtn() {
+        return cy.get('[href="/sites/create/"]').click()
+    }
+
+    siteName() {
+        return cy.get('[placeholder="Site name"]')
+    }
+
+    siteCode() {
+        return cy.get('[placeholder="Site code"]')
+    }
+
+    nominalCode() {
+        return cy.get('[placeholder="Nominal code"]')
+    }
+
+    developer() {
+        return cy.get('[placeholder="Developer"]')
+    }
+
+    closeIcon() {
+        return cy.get('[aria-label="Close"]').click()
+    }
 }
 
 export default Locators
